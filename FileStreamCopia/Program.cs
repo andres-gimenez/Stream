@@ -14,12 +14,12 @@ namespace FileStreamDemo
 
             foreach (string filename in Directory.EnumerateFiles(StartDirectory))
             {
-                using FileStream SourceStream = File.Open(filename, FileMode.Open);
+                using FileStream sourceStream = File.Open(filename, FileMode.Open);
 
                 string nombreCopia = Path.GetFileName(filename) + ".Copia" + Path.GetExtension(filename);
 
-                using FileStream DestinationStream = File.Create(Path.Combine(EndDirectory, nombreCopia));
-                SourceStream.CopyTo(DestinationStream);
+                using FileStream destinationStream = File.Create(Path.Combine(EndDirectory, nombreCopia));
+                sourceStream.CopyTo(destinationStream);
             }
         }
     }
