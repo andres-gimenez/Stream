@@ -16,9 +16,10 @@ namespace FileStreamDemo
             {
                 using FileStream sourceStream = File.Open(filename, FileMode.Open);
 
-                string nombreCopia = Path.GetFileName(filename) + ".Copia" + Path.GetExtension(filename);
+                string nombreCopia = Path.GetFileNameWithoutExtension(filename) + ".Copia" + Path.GetExtension(filename);
 
                 using FileStream destinationStream = File.Create(Path.Combine(EndDirectory, nombreCopia));
+                
                 sourceStream.CopyTo(destinationStream);
             }
         }
