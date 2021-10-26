@@ -10,8 +10,8 @@ namespace FileStreamLee
     {
         static void Main(string[] args)
         {
-            Ejemplo1();
-            //Ejemplo2();
+            //Ejemplo1();
+            Ejemplo2();
         }
 
         static void Ejemplo1()
@@ -51,12 +51,9 @@ namespace FileStreamLee
 
             using FileStream sourceStream = File.Open(ficheroPrueba, FileMode.Open);
 
-            using StringWriter stringReader = new StringWriter();
+            var ouputStream = Console.OpenStandardOutput();
 
-            //var ouputStream = Console.OpenStandardOutput();
-
-            //sourceStream.CopyTo(ouputStream);
+            sourceStream.CopyTo(ouputStream);
         }
-
     }
 }
